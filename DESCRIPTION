@@ -16,10 +16,10 @@ LazyData: true
 Imports: 
     dplyr,
     magrittr,
-    stringr,
-    readr,
     ggplot2,
     plotly,
     shiny,
     stats,
-    utils
+    utils,
+    base,
+  

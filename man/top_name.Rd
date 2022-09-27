@@ -7,7 +7,7 @@
 top_name(pet_type)
 }
 \arguments{
-\item{The}{\strong{pet_type} is the species of the pet.}
+\item{pet_type}{is the species of the pet.}
 }
 \value{
 The function will return a interactive bar chart that

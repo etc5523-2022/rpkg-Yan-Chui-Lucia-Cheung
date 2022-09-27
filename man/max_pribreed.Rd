@@ -7,7 +7,7 @@
 max_pribreed(pri_breed)
 }
 \arguments{
-\item{The}{\strong{pri_breed} is the primary breed of the particular species.}
+\item{pri_breed}{is the primary breed of the particular species.}
 }
 \value{
 The function will return a 2 columns data frame that show the zipcode and number of

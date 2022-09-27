@@ -17,7 +17,7 @@ seattle_pets <- readr::read_csv("https://raw.githubusercontent.com/rfordatascien
 #' Enter a primary breed to see which 5 zip code districts have the highest number of
 #' that particular primary breed.
 #'
-#' @param The **pri_breed** is the primary breed of the particular species.
+#' @param pri_breed is the primary breed of the particular species.
 #'
 #' @return
 #' The function will return a 2 columns data frame that show the zipcode and number of
@@ -26,14 +26,16 @@ seattle_pets <- readr::read_csv("https://raw.githubusercontent.com/rfordatascien
 #' @export
 max_pribreed <- function(pri_breed) {
 
-  max_pribreed <- seattle_pets %>%
-    filter(primary_breed == pri_breed) %>%
-    group_by(zip_code) %>%
-    summarize(count = n()) %>%
-    arrange(-count) %>%
-    head(5)
+  primary_breed <- zip_code <- n <- count <- NULL
 
-  print(max_pribreed)
+  max_pribreed <- seattle_pets %>%
+    dplyr::filter(primary_breed == pri_breed) %>%
+    dplyr::group_by(zip_code) %>%
+    dplyr::summarize(count = n()) %>%
+    dplyr::arrange(-count) %>%
+    utils::head(5)
+
+  base::print(max_pribreed)
 }
 
 #' The top 10 popular pet name in Seattle.
@@ -42,7 +44,7 @@ max_pribreed <- function(pri_breed) {
 #' Enter the species (Dog, cat, goat or pig) to see 10 most popular
 #' pet names for that species.
 #'
-#' @param The **pet_type** is the species of the pet.
+#' @param pet_type is the species of the pet.
 #'
 #' @return
 #' The function will return a interactive bar chart that
@@ -51,20 +53,22 @@ max_pribreed <- function(pri_breed) {
 #' @export
 top_name <- function(pet_type) {
 
-  plot <- seattle_pets %>%
-    filter(!is.na(animals_name)) %>%
-    filter(species == pet_type)%>%
-    group_by(animals_name) %>%
-    count() %>%
-    arrange(-n) %>%
-    head(10) %>%
-    ggplot(aes(x = reorder(animals_name, -n), y = n,
-               text = paste("name: ", reorder(animals_name, -n), "count: ", n))) +
-    geom_col(fill = "light blue")+
-    xlab("pet names") +
-    ylab("number of pet")
+animals_name <- species <- n <- NULL
 
-  ggplotly(plot, tooltip = "text")
+  plot <- seattle_pets %>%
+    dplyr::filter(!base::is.na(animals_name)) %>%
+    dplyr::filter(species == pet_type)%>%
+    dplyr::group_by(animals_name) %>%
+    dplyr::count() %>%
+    dplyr::arrange(-n) %>%
+    utils::head(10) %>%
+    ggplot2::ggplot(ggplot2::aes(x = stats::reorder(animals_name, -n), y = n,
+               text = base::paste("name: ", stats::reorder(animals_name, -n), "count: ", n))) +
+    ggplot2::geom_col(fill = "light blue")+
+    ggplot2::xlab("pet names") +
+    ggplot2::ylab("number of pet")
+
+  plotly::ggplotly(plot, tooltip = "text")
 
 }
 
