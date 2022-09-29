@@ -6,10 +6,11 @@ library(ggplot2)
 library(plotly)
 
 
-seattle_pets <- readr::read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-03-26/seattle_pets.csv") %>%
-  filter(!is.na(zip_code)) %>%
-  mutate(zip_code = str_remove_all(zip_code, "(-)[0-9]{4}")) %>%
-  mutate(zip_code = as.integer(zip_code))
+seattle_pets <- readr::read_csv("seattle_pets.csv") %>%
+   filter(!is.na(zip_code)) %>%
+   mutate(zip_code = str_remove_all(zip_code, "(-)[0-9]{4}")) %>%
+   mutate(zip_code = as.integer(zip_code))
+
 
 animals_name <- unique(seattle_pets$animals_name)
 
@@ -85,13 +86,13 @@ observeEvent(input$pet_type, {
   output$title <- renderText(paste("The top 10 popular name of ", input$pet_type, "in Seattle."))
     })
 
-observeEvent(input$pet_zipcode,
+observeEvent(input$pet_species,
              {pet_breed <- seattle_pets %>%
                #filter(!is.na(primary_breed)) %>%
-               filter(zip_code == input$pet_zipcode) %>%
-               select(species)
+               filter(species == input$pet_species) %>%
+               select(zip_code)
 
-             updateSelectInput(session, "pet_species", choices = pet_species)
+             updateSelectInput(session, "pet_zipcode", choices = pet_breed)
              })
 
 

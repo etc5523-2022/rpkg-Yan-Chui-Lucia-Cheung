@@ -2,6 +2,9 @@
 
 export("%>%")
 export(max_pribreed)
+export(name_of_the_year)
 export(run_app)
 export(top_name)
+export(zipcode_max)
+export(zipcode_min)
 importFrom(magrittr,"%>%")
