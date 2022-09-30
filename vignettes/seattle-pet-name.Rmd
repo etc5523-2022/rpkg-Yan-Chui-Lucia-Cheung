@@ -1,0 +1,27 @@
+---
+title: "Seattle pet name and distribution"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Seattle pet name and distribution}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+
+
+### Purpose of the package:
+
+The purpose of `seattlepetname` package allows user to easily understand the preference of primary breeds and 
+
+```{r setup}
+library(seattlepetname)
+```
+
+

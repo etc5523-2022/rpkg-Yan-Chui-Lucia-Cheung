@@ -33,7 +33,7 @@ max_pribreed <- function(pri_breed) {
   max_pribreed <- seattle_pets %>%
     dplyr::filter(primary_breed == pri_breed) %>%
     dplyr::group_by(zip_code) %>%
-    dplyr::summarize(count = n()) %>%
+    dplyr::summarize(count = dplyr::n()) %>%
     dplyr::arrange(-count) %>%
     utils::head(5)
 
@@ -141,8 +141,53 @@ name_of_the_year <- function(pet_name, top_year) {
     base::print("This is not a popular name of this year!")
   }
 
+}
+
+
+#' The number summary of pet distribution in each year.
+#'
+#' @description
+#' Enter a particular year to see mean, median and standard deviation of
+#' each year. The range of the year is from 2015 to 2018, as there are
+#' less than 20 observations from the year prior 2015.
+#'
+#' @param pet_count is the name you want to check.
+#'
+#' @return
+#' The function will return a 5 columns data frame that shows year, mean, median,
+#' standard deviation and the count of zipcode districts.
+#'
+#' @export
+pet_summary <- function(pet_count) {
+
+  license_issue_date <- year <- zip_code <- n <- NULL
+
+  cleanned_data <- seattle_pets %>%
+    dplyr::mutate(year = lubridate::year(license_issue_date)) %>%
+    dplyr::filter(!year %in% c("2003", "2004", "2006", "2008", "2011", "2012", "2014"))
+
+  summary <- cleanned_data %>%
+    dplyr::group_by(year, zip_code) %>%
+    dplyr::count() %>%
+    dplyr::group_by(year) %>%
+    dplyr::summarise(mean = base::round(base::mean(n), 2),
+              median = base::round(stats::median(n), 2), sd = base::round(stats::sd(n), 2))
+
+  count_zipcode <-  cleanned_data %>%
+    dplyr::mutate(zip_code = as.numeric(zip_code)) %>%
+    dplyr::group_by(year, zip_code) %>%
+    dplyr::distinct(zip_code) %>%
+    dplyr::group_by(year) %>%
+    dplyr::count() %>%
+    dplyr::rename(zipcode_count = n)
+
+  year_summary <- dplyr::full_join(summary, count_zipcode, by = "year") %>%
+    dplyr::filter(year == pet_count)
+
+  base::print(year_summary)
 
 }
+
 
 #' The top 10 popular pet name in Seattle.
 #'

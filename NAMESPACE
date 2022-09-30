@@ -3,6 +3,7 @@
 export("%>%")
 export(max_pribreed)
 export(name_of_the_year)
+export(pet_summary)
 export(run_app)
 export(top_name)
 export(zipcode_max)

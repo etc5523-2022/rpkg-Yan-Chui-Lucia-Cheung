@@ -3,8 +3,8 @@ Title: The Distribution of Pets Across Seattle
 Version: 0.0.0.9000
 Authors@R: 
     person("Yan Chui Lucia", "Cheung", , "yche0164@student.monash.edu", role = c("aut", "cre"))
-Description: The package allows users to understand the distribution of different primary breeds across Seattle
-    and the growth in number of pets. Also, the user can understand the prefernece for pet name of pet owners in Seattle. 
+Description: The package allows users to understand the distribution of pets across Seattle. 
+    Also, the user can understand the prefernece of pet owners for pet name and primary breeds in Seattle. 
 License: MIT + file LICENSE
 Encoding: UTF-8
 Language: es
@@ -23,3 +23,9 @@ Imports:
     utils,
     base,
     lubridate
+Suggests: 
+    knitr,
+    rmarkdown,
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
+VignetteBuilder: knitr
