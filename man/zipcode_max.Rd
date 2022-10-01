@@ -15,6 +15,6 @@ number of licensed pet of a particular year.
 }
 \description{
 Enter the year to see which zip code district has the highest number of
-licensed pet. The range of the year is from 2015 to 2018, as there are less than 20 observations
-from the year prior 2015.
+licensed pet. The range of the year is from 2015 to 2018, as record years
+prior 2015 are less than 20 observations.
 }

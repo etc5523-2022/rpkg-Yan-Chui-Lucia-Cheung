@@ -2,7 +2,7 @@
 % Please edit documentation in R/pet-name.R
 \name{max_pribreed}
 \alias{max_pribreed}
-\title{The preference of pet owners in Seattle.}
+\title{The preference of primary breeds of pet owners in Seattle.}
 \usage{
 max_pribreed(pri_breed)
 }

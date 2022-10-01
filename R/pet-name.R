@@ -13,7 +13,7 @@ seattle_pets <- readr::read_csv("https://raw.githubusercontent.com/rfordatascien
   mutate(zip_code = as.integer(zip_code)) %>%
   mutate(license_issue_date = as_date(license_issue_date, format = "%B %d %Y"))
 
-#' The preference of pet owners in Seattle.
+#' The preference of primary breeds of pet owners in Seattle.
 #'
 #' @description
 #' Enter a primary breed to see which 5 zip code districts have the highest number of
@@ -45,8 +45,8 @@ max_pribreed <- function(pri_breed) {
 #'
 #' @description
 #' Enter the year to see which zip code district has the highest number of
-#' licensed pet. The range of the year is from 2015 to 2018, as there are less than 20 observations
-#' from the year prior 2015.
+#' licensed pet. The range of the year is from 2015 to 2018, as record years
+#' prior 2015 are less than 20 observations.
 #'
 #' @param max_year is the year you want to check.
 #'
@@ -189,7 +189,7 @@ pet_summary <- function(pet_count) {
 }
 
 
-#' The top 10 popular pet name in Seattle.
+#' The top 10 popular pet name (by species) in Seattle.
 #'
 #' @description
 #' Enter the species (Dog, cat, goat or pig) to see 10 most popular

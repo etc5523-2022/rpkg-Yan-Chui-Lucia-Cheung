@@ -2,7 +2,7 @@
 % Please edit documentation in R/pet-name.R
 \name{top_name}
 \alias{top_name}
-\title{The top 10 popular pet name in Seattle.}
+\title{The top 10 popular pet name (by species) in Seattle.}
 \usage{
 top_name(pet_type)
 }

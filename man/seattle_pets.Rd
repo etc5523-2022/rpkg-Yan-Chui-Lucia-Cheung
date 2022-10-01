@@ -3,7 +3,7 @@
 \docType{data}
 \name{seattle_pets}
 \alias{seattle_pets}
-\title{Seattle pet name.}
+\title{Seattle licensed pet}
 \format{
 A data frame with 52,122 observations and 7 variables:
 \describe{
@@ -24,6 +24,6 @@ A data frame with 52,122 observations and 7 variables:
 seattle_pets
 }
 \description{
-The data set contains the name of the licensed pet in Seattle.
+The data set contains the information of the licensed pet in Seattle.
 }
 \keyword{datasets}

@@ -14,14 +14,130 @@ knitr::opts_chunk$set(
 )
 ```
 
-
-
-### Purpose of the package:
-
-The purpose of `seattlepetname` package allows user to easily understand the preference of primary breeds and 
-
 ```{r setup}
 library(seattlepetname)
 ```
+
+### Purpose of the package:
+
+The purpose of `seattlepetname` package allows users to understand the preference of primary breeds and pet names of pet owners in Seattle. The package also allows users to retrieve the distribution of licensed pet in Seattle according to zip code districts. 
+
+The distribution of licensed pet in different zip code districts show that whether a particular district is an deal habitat for a particular primary breed. The preference of pet name aloosw user to decide an unique name for their pets. 
+
+## Target users of the package:
+
+People living in Seattle who wants to own a pet.
+
+### Data description:
+
+The data used in this package is the record of Seattle licensed pet from 2003 to 2018. The author of the data set is [City of Seattle](https://data.seattle.gov/Community/Seattle-Pet-Licenses/jguv-t9rb).
+
+### Usage of the function:
+
+1.  The preference of primary breeds of pet owners in Seattle
+
+By entering the primary breeds in `max_pribreed()` function, a data frame with the 5 zip code districts that have the highest number of a particular primary breed. Users can check the name of the primary breed in the data set. The following example used the "Old English Sheepdog" for demonstration.
+
+The data frame allow users to understand a particular primary breed is more preferred by pet owners in a particular zip code district. It implies that the district is more suitable for a particular primary breed.
+
+- Users have to enter the input as character string. 
+- The input is case-sensitive, for example it will create error when entering **"dog"** instead of **"Dog"**. 
+
+```{r}
+
+max_pribreed("Old English Sheepdog")
+
+```
+
+2.  The zip code that has the **highest number of licensed pets** of a particular year
+
+By entering the year in `zipcode_max()` function, a data frame with the zip code districts that have the highest number of licensed pets overall. The following example used year 2018 for demonstration.
+
+The data frame allows users to understand the distribution of licensed pet of zip code district in Seattle over years. The district that has the highest number of licensed pet may have more facilities for pets. 
+
+*The range of the year is from 2015 to 2018, as record years prior 2015 are less than 20 observations.
+
+*Users have to enter the input as character string. 
+
+```{r}
+
+zipcode_max("2018")
+
+```
+
+
+3.  The zip code that has the **lowest number of licensed pets** of a particular year
+
+By entering the year in `zipcode_min()` function, a data frame with the zip code districts that have the lowest number of licensed pets overall. The following example used year 2018 for demonstration.
+
+The data frame allows users to understand the distribution of licensed pet of zip code district in Seattle over years.
+
+*The range of the year is from 2015 to 2018, as record years prior 2015 are less than 20 observations.
+
+*Users have to enter the input as character string. 
+
+```{r}
+
+zipcode_min("2018")
+
+```
+
+
+4. The top 5 pet name of a particular year 
+
+By entering pet names and year in `name_of_the_year()` function, a data frame with the top 5 popular names and the respective count of a particular year will be returned. 
+
+When the name is not on the top 5 list, only a character string "This is not a popular name of this year!" will be returned to indicate that the name is not popular. When the name is on the top 5 list, the data frame mentioned above and the character string "This is a popular name of this year!".  
+
+The data frame allows users to understand the preference of pet name of current pet owners in Seattle.
+
+- The range of the year is from 2015 to 2018, as record years prior 2015 are less than 20 observations.
+
+- Users have to enter the input as character string. 
+- The input is case-sensitive, for example it will create error when entering **"dog"** instead of **"Dog"**. 
+
+
+```{r}
+
+name_of_the_year("Silas", "2018") #When the name is not on the top 5 list
+
+```
+
+```{r}
+
+name_of_the_year("Lucy", "2018") #When the name is on the top 5 list
+
+```
+
+5. The number summary of pet distribution in each year
+
+By entering the year in `pet_summary()` function, a data frame with the mean, median, standard deviation and the number of zip code recorded of a particular year will be returned. The number summary is based on the number of districts recorded in a particular year. 
+
+The data frame allow users to understand the trend of distribution of pet in Seattle.
+
+- The range of the year is from 2015 to 2018, as record years prior 2015 are less than 20 observations.
+
+- Users have to enter the input as character string. 
+
+```{r}
+
+pet_summary("2018")
+
+```
+
+6. The top 10 popular pet name (by species) in Seattle
+
+By entering the species in `top_name()` function, a plot shows the top 10 popular name of a particular species will be returned . 
+
+The data frame allow users to understand the preference of pet names of pet owners in Seattle.
+
+- Users have to enter the input as character string. 
+- The input is case-sensitive, for example it will create error when entering **"dog"** instead of **"Dog"**. 
+
+```{r}
+
+top_name("Dog") 
+```
+
 
 

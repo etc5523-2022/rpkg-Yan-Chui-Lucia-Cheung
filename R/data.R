@@ -1,6 +1,6 @@
-#' Seattle pet name.
+#' Seattle licensed pet
 #'
-#' The data set contains the name of the licensed pet in Seattle.
+#' The data set contains the information of the licensed pet in Seattle.
 #'
 #' @format A data frame with 52,122 observations and 7 variables:
 #' \describe{
