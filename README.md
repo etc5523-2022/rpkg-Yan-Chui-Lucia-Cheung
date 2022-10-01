@@ -1,0 +1,94 @@
+---
+---
+---
+
+# seattlepetname
+
+<!-- badges: start -->
+
+<!-- badges: end -->
+
+The goal of `seattlepetname` is to allows users to understand the preference of primary breeds and pet names of pet owners in Seattle. The package also allows users to retrieve the distribution of licensed pet in Seattle according to zip code districts.
+
+## Installation
+
+Users can install the `seattlepetname` from [GitHub](https://github.com/) with:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("etc5523-2022/rpkg-Yan-Chui-Lucia-Cheung")
+```
+
+## Example
+
+These are the example of how to use the function:
+
+``` r
+library(seattlepetname)
+```
+
+1.  The preference of primary breeds of pet owners in Seattle
+
+By entering the primary breeds in `max_pribreed()` function, a data frame with the 5 zip code districts that have the highest number of a particular primary breed.
+
+```{r}
+
+max_pribreed("Old English Sheepdog")
+
+```
+
+2.  The zip code that has the **highest number of licensed pets** of a particular year
+
+By entering the year in `zipcode_max()` function, a data frame with the zip code districts that have the highest number of licensed pets overall. The following example used year 2018 for demonstration.
+
+```{r}
+
+zipcode_max("2018")
+
+```
+
+3.  The zip code that has the **lowest number of licensed pets** of a particular year
+
+By entering the year in `zipcode_min()` function, a data frame with the zip code districts that have the lowest number of licensed pets overall.
+
+```{r}
+
+zipcode_min("2018")
+
+```
+
+4.  The top 5 pet name of a particular year
+
+By entering pet names and year in `name_of_the_year()` function, a data frame with the top 5 popular names and the respective count of a particular year will be returned.
+
+```{r}
+
+name_of_the_year("Silas", "2018") #When the name is not on the top 5 list
+
+```
+
+```{r}
+
+name_of_the_year("Lucy", "2018") #When the name is on the top 5 list
+
+```
+
+5.  The number summary of pet distribution in each year
+
+By entering the year in `pet_summary()` function, a data frame with the mean, median, standard deviation and the number of zip code recorded of a particular year will be returned.
+
+```{r}
+
+pet_summary("2018")
+
+```
+
+6.  The top 10 popular pet name (by species) in Seattle
+
+By entering the species in `top_name()` function, a plot shows the top 10 popular name of a particular species will be returned .
+
+```{r}
+
+top_name("Dog") 
+
+```
