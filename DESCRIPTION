@@ -22,7 +22,9 @@ Imports:
     stats,
     utils,
     base,
-    lubridate
+    lubridate,
+    stringr,
+    readr
 Suggests: 
     knitr,
     rmarkdown,

@@ -1,3 +1,4 @@
+
 #' The preference of primary breeds of pet owners in Seattle.
 #'
 #' @description
@@ -13,7 +14,15 @@
 #' @export
 max_pribreed <- function(pri_breed) {
 
-  primary_breed <- zip_code <- n <- count <- NULL
+  primary_breed <- zip_code <- n <- count <- license_issue_date <- NULL
+
+  csv <- 'https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-03-26/seattle_pets.csv'
+
+  seattle_pets <- readr::read_csv(csv) %>%
+    dplyr::filter(!is.na(zip_code)) %>%
+    dplyr::mutate(zip_code = stringr::str_remove_all(zip_code, "(-)[0-9]{4}")) %>%
+    dplyr::mutate(zip_code = base::as.integer(zip_code)) %>%
+    dplyr::mutate(license_issue_date = lubridate::as_date(license_issue_date, format = "%B %d %Y"))
 
   max_pribreed <- seattle_pets %>%
     dplyr::filter(primary_breed == pri_breed) %>%
@@ -43,6 +52,14 @@ max_pribreed <- function(pri_breed) {
 zipcode_max <- function(max_year) {
 
   license_issue_date <- year <- zip_code <- n <- NULL
+
+  csv <- 'https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-03-26/seattle_pets.csv'
+
+  seattle_pets <- readr::read_csv(csv) %>%
+    dplyr::filter(!is.na(zip_code)) %>%
+    dplyr::mutate(zip_code = stringr::str_remove_all(zip_code, "(-)[0-9]{4}")) %>%
+    dplyr::mutate(zip_code = base::as.integer(zip_code)) %>%
+    dplyr::mutate(license_issue_date = lubridate::as_date(license_issue_date, format = "%B %d %Y"))
 
   max <- seattle_pets %>%
     dplyr::mutate(year = lubridate::year(license_issue_date)) %>%
@@ -75,6 +92,15 @@ zipcode_min <- function(min_year) {
 
   license_issue_date <- year <- zip_code <- n <- NULL
 
+  csv <- 'https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-03-26/seattle_pets.csv'
+
+  seattle_pets <- readr::read_csv(csv) %>%
+    dplyr::filter(!is.na(zip_code)) %>%
+    dplyr::mutate(zip_code = stringr::str_remove_all(zip_code, "(-)[0-9]{4}")) %>%
+    dplyr::mutate(zip_code = base::as.integer(zip_code)) %>%
+    dplyr::mutate(license_issue_date = lubridate::as_date(license_issue_date, format = "%B %d %Y"))
+
+
   min <- seattle_pets %>%
     dplyr::mutate(year = lubridate::year(license_issue_date)) %>%
     dplyr::group_by(year, zip_code) %>%
@@ -106,7 +132,16 @@ zipcode_min <- function(min_year) {
 #' @export
 name_of_the_year <- function(pet_name, top_year) {
 
-  license_issue_date <- year <- animals_name <- n <- NULL
+  license_issue_date <- year <- animals_name <- zip_code <- n <- NULL
+
+  csv <- 'https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-03-26/seattle_pets.csv'
+
+  seattle_pets <- readr::read_csv(csv) %>%
+    dplyr::filter(!is.na(zip_code)) %>%
+    dplyr::mutate(zip_code = stringr::str_remove_all(zip_code, "(-)[0-9]{4}")) %>%
+    dplyr::mutate(zip_code = base::as.integer(zip_code)) %>%
+    dplyr::mutate(license_issue_date = lubridate::as_date(license_issue_date, format = "%B %d %Y"))
+
 
   name <- seattle_pets %>%
     dplyr::mutate(year = lubridate::year(license_issue_date)) %>%
@@ -119,13 +154,12 @@ name_of_the_year <- function(pet_name, top_year) {
     utils::head(5)
 
 
-  if(base::any(name$animals_name %in% pet_name)) {
+if(base::any(name$animals_name %in% pet_name)){
     base::print("This is a popular name of this year!")
     base::print(name)
   } else {
     base::print("This is not a popular name of this year!")
   }
-
 }
 
 
@@ -146,6 +180,15 @@ name_of_the_year <- function(pet_name, top_year) {
 pet_summary <- function(pet_count) {
 
   license_issue_date <- year <- zip_code <- n <- NULL
+
+  csv <- 'https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-03-26/seattle_pets.csv'
+
+  seattle_pets <- readr::read_csv(csv) %>%
+    dplyr::filter(!is.na(zip_code)) %>%
+    dplyr::mutate(zip_code = stringr::str_remove_all(zip_code, "(-)[0-9]{4}")) %>%
+    dplyr::mutate(zip_code = base::as.integer(zip_code)) %>%
+    dplyr::mutate(license_issue_date = lubridate::as_date(license_issue_date, format = "%B %d %Y"))
+
 
   cleanned_data <- seattle_pets %>%
     dplyr::mutate(year = lubridate::year(license_issue_date)) %>%
@@ -189,7 +232,15 @@ pet_summary <- function(pet_count) {
 #' @export
 top_name <- function(pet_type) {
 
-animals_name <- species <- n <- NULL
+animals_name <- species <- n <- zip_code <- license_issue_date <- NULL
+
+csv <- 'https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-03-26/seattle_pets.csv'
+
+seattle_pets <- readr::read_csv(csv) %>%
+  dplyr::filter(!is.na(zip_code)) %>%
+  dplyr::mutate(zip_code = stringr::str_remove_all(zip_code, "(-)[0-9]{4}")) %>%
+  dplyr::mutate(zip_code = base::as.integer(zip_code)) %>%
+  dplyr::mutate(license_issue_date = lubridate::as_date(license_issue_date, format = "%B %d %Y"))
 
   plot <- seattle_pets %>%
     dplyr::filter(!base::is.na(animals_name)) %>%
@@ -207,6 +258,7 @@ animals_name <- species <- n <- NULL
   plotly::ggplotly(plot, tooltip = "text")
 
 }
+
 
 
 
