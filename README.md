@@ -14,7 +14,8 @@ in Seattle according to zip code districts.
 ## Installation
 
 Users can install the `seattlepetname` from
-[GitHub](https://github.com/) with:
+[GitHub](https://github.com/etc5523-2022/rpkg-Yan-Chui-Lucia-Cheung)
+with:
 
 ``` r
 # install.packages("devtools")

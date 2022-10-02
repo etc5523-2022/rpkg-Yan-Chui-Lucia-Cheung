@@ -24,7 +24,7 @@ The goal of `seattlepetname` is to allows users to understand the preference of 
 
 ## Installation
 
-Users can install the `seattlepetname` from [GitHub](https://github.com/) with:
+Users can install the `seattlepetname` from [GitHub](https://github.com/etc5523-2022/rpkg-Yan-Chui-Lucia-Cheung) with:
 
 
 ``` r

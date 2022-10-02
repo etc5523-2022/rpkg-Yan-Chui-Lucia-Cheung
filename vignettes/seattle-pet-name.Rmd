@@ -22,7 +22,7 @@ library(seattlepetname)
 
 The purpose of `seattlepetname` package allows users to understand the preference of primary breeds and pet names of pet owners in Seattle. The package also allows users to retrieve the distribution of licensed pet in Seattle according to zip code districts.
 
-The distribution of licensed pet in different zip code districts show that whether a particular district is an deal habitat for a particular primary breed. The preference of pet name aloosw user to decide an unique name for their pets.
+The distribution of licensed pet in different zip code districts show that whether a particular district is an deal habitat for a particular primary breed. The preference of pet name allow user to decide an unique name for their pets.
 
 ## Target users of the package:
 
@@ -36,7 +36,7 @@ The data used in this package is the record of Seattle licensed pet from 2003 to
 
 1.  The preference of primary breeds of pet owners in Seattle
 
-By entering the primary breeds in `max_pribreed()` function, a data frame with the 5 zip code districts that have the highest number of a particular primary breed ill be returned. Users can check the name of the primary breed in the data set. The following example used the "Old English Sheepdog" for demonstration.
+By entering the primary breeds in `max_pribreed()` function, a data frame with the 5 zip code districts that have the highest number of a particular primary breed will be returned. Users can check the name of the primary breed in the data set. The following example used the "Old English Sheepdog" for demonstration.
 
 The data frame allow users to understand a particular primary breed is more preferred by pet owners in a particular zip code district. It implies that the district is more suitable for a particular primary breed.
 
@@ -51,7 +51,7 @@ max_pribreed("Old English Sheepdog")
 
 2.  The zip code that has the **highest number of licensed pets** of a particular year
 
-By entering the year in `zipcode_max()` function, a data frame with the zip code districts that have the highest number of licensed pets overall. The following example used year 2018 for demonstration.
+By entering the year in `zipcode_max()` function, a data frame with the zip code districts that have the highest number of licensed pets overall will be returned. The following example used year 2018 for demonstration.
 
 The data frame allows users to understand the distribution of licensed pet of zip code district in Seattle over years. The district that has the highest number of licensed pet may have more facilities for pets.
 
@@ -88,7 +88,7 @@ By entering pet names and year in `name_of_the_year()` function, a data frame wi
 
 When the name is not on the top 5 list, only a character string "This is not a popular name of this year!" will be returned to indicate that the name is not popular. When the name is on the top 5 list, the data frame mentioned above and the character string "This is a popular name of this year!".
 
-The data frame allows users to understand the preference of pet name of current pet owners in Seattle.
+The data frame allows users to understand the trend of pet name in Seattle.
 
 -   The range of the year is from 2015 to 2018, as record years prior 2015 are less than 20 observations.
 
@@ -98,7 +98,7 @@ The data frame allows users to understand the preference of pet name of current 
 
 ```{r}
 
-name_of_the_year("Silas", "2018") #When the name is not on the top 5 list
+name_of_the_year("Silas", "2018") # When the name is not on the top 5 list
 
 ```
 
@@ -130,12 +130,11 @@ pet_summary("2018")
 
 By entering the species in `top_name()` function, a plot that shows the top 10 popular name of a particular species will be returned .
 
-The data frame allow users to understand the preference of pet names of pet owners in Seattle.
+The data frame allow users to understand the preference of pet names (by species) of pet owners in Seattle.
 
 -   Users have to enter the input as character string.
 -   The input is case-sensitive, for example it will create error when entering **"dog"** instead of **"Dog"**.
 
 ```{r}
-
 top_name("Dog") 
 ```
