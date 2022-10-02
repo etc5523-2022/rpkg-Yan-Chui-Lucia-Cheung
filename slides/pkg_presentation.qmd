@@ -1,7 +1,9 @@
 ---
 title: "Seattlepetname"
 subtitle: "ETC5523 - Assignment 2"
-format: revealjs
+format: 
+  revealjs:
+    theme: sky
 editor: visual
 author: "Yan Chui Lucia Cheung"
 ---
@@ -9,7 +11,6 @@ author: "Yan Chui Lucia Cheung"
 ## Purpose of the package
 
 ::: incremental
-
 -   easily retrieve the data
 
 -   understand the **preference of primary breeds** and **pet names** of pet owners in Seattle through the function in the package
@@ -17,20 +18,18 @@ author: "Yan Chui Lucia Cheung"
 -   help user to decide an unique name and primary breed that is suitable
 
 -   target user: People who are planning to own a pet in Seattle
-
 :::
 
 ## Data decsription {.scrollable}
 
 ::: panel-tabset
-
 ### Data source
 
 -   Source of the data: [Seattle open data](https://data.seattle.gov/Community/Seattle-Pet-Licenses/jguv-t9rb)
 
 -   Retrieve from: [Tidytuesday](https://github.com/rfordatascience/tidytuesday/tree/master/data/2019/2019-03-26)
 
-### Variable 
+### Variable
 
 ```{r}
 
@@ -50,15 +49,14 @@ knitr::kable(df)
 
 ## Demonstration of the function:
 
-1. Download from github: 
+1.  Download from github:
 
-```{.r}
+``` r
 install.packages("devtools")
 devtools::install_github("etc5523-2022/rpkg-Yan-Chui-Lucia-Cheung")
 ```
 
-
-2. Load the library: `seattlepetname`
+2.  Load the library: `seattlepetname`
 
 ```{r}
 
@@ -66,22 +64,24 @@ library(seattlepetname)
 
 ```
 
-```{.r}
+``` r
 library(seattlepetname)
 ```
 
-
 ## Demonstration of the function: {.scrollable}
 
+::: {style="color: #EBA000;"}
 Function 1: The preference of primary breeds of pet owners in Seattle
+:::
 
-- Input: primary breeds 
+::: {style="font-size: 30px;"}
+-   Input: primary breeds
 
-```{.r}
+``` r
 max_pribreed("Old English Sheepdog")
 ```
 
-- Output: The 5 zip code districts that have the **highest number** of a particular primary breed will be returned
+-   Output: The 5 zip code districts that have the **highest number** of a particular primary breed will be returned
 
 ```{r}
 
@@ -89,20 +89,23 @@ max_pribreed("Old English Sheepdog")
 
 ```
 
-- It shows a particular primary breeds is more preferred by pet owners in some of the zip code districts 
-
+-   It shows a particular primary breeds is more preferred by pet owners in some of the zip code districts
+:::
 
 ## Demonstration of the function: {.scrollable}
 
-Function 2:  The zip code that has the **highest number of licensed pets** of a particular year
+::: {style="color: #EBA000;"}
+Function 2: The zip code that has the **highest number of licensed pets** of a particular year
+:::
 
-- Input: Year recorded in the data set (from 2015 to 2018)
+::: {style="font-size: 30px;"}
+-   Input: Year recorded in the data set (from 2015 to 2018)
 
-```{.r}
+``` r
 zipcode_max("2018")
 ```
 
-- Output: A data frame with the zip code districts that have the highest number of licensed pets overall
+-   Output: A data frame with the zip code districts that have the highest number of licensed pets overall
 
 ```{r}
 
@@ -110,42 +113,48 @@ zipcode_max("2018")
 
 ```
 
-- Allows users to understand the distribution of licensed pet of zip code district in Seattle over years 
-
+-   Allows users to understand the distribution of licensed pet of zip code district in Seattle over years
+:::
 
 ## Demonstration of the function: {.scrollable}
 
-Function 3:   The zip code that has the **lowest number of licensed pets** of a particular year
+::: {style="color: #EBA000;"}
+Function 3: The zip code that has the **lowest number of licensed pets** of a particular year
+:::
 
-- Input: Year recorded in the data set (from 2015 to 2018)
+::: {style="font-size: 30px;"}
+-   Input: Year recorded in the data set (from 2015 to 2018)
 
-```{.r}
+``` r
+zipcode_min("2018")
+```
+
+-   Output: A data frame with the zip code districts that have the lowest number of licensed pets overall
+
+```{r}
+
 zipcode_min("2018")
 
 ```
 
-- Output: A data frame with the zip code districts that have the lowest number of licensed pets overall
-
-```{r}
-
-zipcode_min("2018")
-
-```
-
-- Allows users to understand the distribution of licensed pet of zip code district in Seattle over years 
-
+-   Allows users to understand the distribution of licensed pet of zip code district in Seattle over years
+:::
 
 ## Demonstration of the function: {.scrollable}
 
-Function 4:  The top 5 pet name of a particular year
+::: {style="color: #EBA000;"}
+Function 4: The top 5 pet name of a particular year
+:::
 
-- Input: Pet names and year recorded in the data set (from 2015 to 2018)
 
-```{.r}
+::: {style="font-size: 30px;"}
+-   Input: Pet names and year recorded in the data set (from 2015 to 2018)
+
+``` r
 name_of_the_year("Silas", "2018") # When the name is not on the top 5 list
 ```
 
-- Output: A character string will be returned to indicate that the name is not on the top 5 list 
+-   Output: A character string will be returned to indicate that the name is not on the top 5 list
 
 ```{r}
 
@@ -153,9 +162,9 @@ name_of_the_year("Silas", "2018") # When the name is not on the top 5 list
 
 ```
 
-- Output: A data frame with the top 5 popular names and the respective count of a particular year and a character string to indicate it is on the top 5 list
+-   Output: A data frame with the top 5 popular names and the respective count of a particular year and a character string to indicate it is on the top 5 list
 
-```{.r}
+``` r
 name_of_the_year("Lucy", "2018") #When the name is on the top 5 list
 ```
 
@@ -165,40 +174,47 @@ name_of_the_year("Lucy", "2018") #When the name is on the top 5 list
 
 ```
 
-- It allows users to understand the trend of pet name in Seattle 
-
+-   It allows users to understand the trend of pet name in Seattle
+:::
 
 ## Demonstration of the function: {.scrollable}
 
-Function 5:   The number summary of pet distribution in each year
+::: {style="color: #EBA000;"}
+Function 5: The number summary of pet distribution in each year
+:::
 
-- Input: Year recorded in the data set (from 2015 to 2018)
+::: {style="font-size: 30px;"}
+-   Input: Year recorded in the data set (from 2015 to 2018)
 
-```{.r}
+``` r
 pet_summary("2018")
 ```
 
-- Output: A character string will be returned to indicate that the name is not on the top 5 list 
+-   Output: A character string will be returned to indicate that the name is not on the top 5 list
 
 ```{r}
 
 pet_summary("2018")
 
 ```
-- It allow users to understand the trend of distribution of pet in Seattle
 
+-   It allow users to understand the trend of distribution of pet in Seattle
+:::
 
 ## Demonstration of the function: {.scrollable}
 
-Function 6:   The top 10 popular pet name (by species) in Seattle
+::: {style="color: #EBA000;"}
+Function 6: The top 10 popular pet name (by species) in Seattle
+:::
 
-- Input: Species recroed in the data set 
+::: {style="font-size: 30px;"}
+-   Input: Species recorded in the data set
 
-```{.r}
+``` r
 top_name("Dog") 
 ```
 
-- Output: A plot that shows the top 10 popular name of a particular species
+-   Output: A plot that shows the top 10 popular name of a particular species
 
 ```{r}
 
@@ -206,10 +222,9 @@ top_name("Dog")
 
 ```
 
-- It allow users to understand the preference of pet names of pet owners (by species) in Seattle 
+-   It allow users to understand the preference of pet names of pet owners (by species) in Seattle
+:::
 
-##  Thanks for listening to the presentation! {.center-title-slide}
+## Thanks for listening to the presentation!
 
-
-
-
+![](image/giphy.gif){.absolute top="200" left="250"}

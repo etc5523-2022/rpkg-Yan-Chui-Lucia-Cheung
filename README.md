@@ -40,13 +40,6 @@ particular primary breed will be returned.
 ``` r
 
 max_pribreed("Old English Sheepdog")
-#> Rows: 52519 Columns: 7
-#> ── Column specification ────────────────────────────────────────────────────────
-#> Delimiter: ","
-#> chr (7): license_issue_date, license_number, animals_name, species, primary_...
-#> 
-#> ℹ Use `spec()` to retrieve the full column specification for this data.
-#> ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
 #> # A tibble: 5 × 2
 #>   zip_code count
 #>      <int> <int>
@@ -67,13 +60,6 @@ overall. The following example used year 2018 for demonstration.
 ``` r
 
 zipcode_max("2018")
-#> Rows: 52519 Columns: 7
-#> ── Column specification ────────────────────────────────────────────────────────
-#> Delimiter: ","
-#> chr (7): license_issue_date, license_number, animals_name, species, primary_...
-#> 
-#> ℹ Use `spec()` to retrieve the full column specification for this data.
-#> ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
 #> # A tibble: 1 × 3
 #> # Groups:   year [1]
 #>    year zip_code     n
@@ -90,13 +76,6 @@ zip code districts that have the lowest number of licensed pets overall.
 ``` r
 
 zipcode_min("2018")
-#> Rows: 52519 Columns: 7
-#> ── Column specification ────────────────────────────────────────────────────────
-#> Delimiter: ","
-#> chr (7): license_issue_date, license_number, animals_name, species, primary_...
-#> 
-#> ℹ Use `spec()` to retrieve the full column specification for this data.
-#> ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
 #> # A tibble: 1 × 3
 #> # Groups:   year [1]
 #>    year zip_code     n
@@ -113,26 +92,12 @@ particular year will be returned.
 ``` r
 
 name_of_the_year("Silas", "2018") #When the name is not on the top 5 list
-#> Rows: 52519 Columns: 7
-#> ── Column specification ────────────────────────────────────────────────────────
-#> Delimiter: ","
-#> chr (7): license_issue_date, license_number, animals_name, species, primary_...
-#> 
-#> ℹ Use `spec()` to retrieve the full column specification for this data.
-#> ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
 #> [1] "This is not a popular name of this year!"
 ```
 
 ``` r
 
 name_of_the_year("Lucy", "2018") #When the name is on the top 5 list
-#> Rows: 52519 Columns: 7
-#> ── Column specification ────────────────────────────────────────────────────────
-#> Delimiter: ","
-#> chr (7): license_issue_date, license_number, animals_name, species, primary_...
-#> 
-#> ℹ Use `spec()` to retrieve the full column specification for this data.
-#> ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
 #> [1] "This is a popular name of this year!"
 #> # A tibble: 5 × 3
 #> # Groups:   year, animals_name [5]
@@ -154,13 +119,6 @@ a particular year will be returned.
 ``` r
 
 pet_summary("2018")
-#> Rows: 52519 Columns: 7
-#> ── Column specification ────────────────────────────────────────────────────────
-#> Delimiter: ","
-#> chr (7): license_issue_date, license_number, animals_name, species, primary_...
-#> 
-#> ℹ Use `spec()` to retrieve the full column specification for this data.
-#> ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
 #> # A tibble: 1 × 5
 #>    year  mean median    sd zipcode_count
 #>   <dbl> <dbl>  <dbl> <dbl>         <int>
@@ -175,14 +133,6 @@ top 10 popular name of a particular species will be returned.
 ``` r
 
 top_name("Dog") 
-#> Rows: 52519 Columns: 7
-#> ── Column specification ────────────────────────────────────────────────────────
-#> Delimiter: ","
-#> chr (7): license_issue_date, license_number, animals_name, species, primary_...
-#> 
-#> ℹ Use `spec()` to retrieve the full column specification for this data.
-#> ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
 ```
 
 <img src="man/figures/README-unnamed-chunk-8-1.png" width="100%" />
-Testing
