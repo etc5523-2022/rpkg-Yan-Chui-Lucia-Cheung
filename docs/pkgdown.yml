@@ -3,5 +3,8 @@ pkgdown: 2.0.6
 pkgdown_sha: ~
 articles:
   seattle-pet-name: seattle-pet-name.html
-last_built: 2022-10-03T10:14Z
+last_built: 2022-10-03T10:53Z
+urls:
+  reference: https://etc5523-2022.github.io/rpkg-Yan-Chui-Lucia-Cheung/reference
+  article: https://etc5523-2022.github.io/rpkg-Yan-Chui-Lucia-Cheung/articles
 
