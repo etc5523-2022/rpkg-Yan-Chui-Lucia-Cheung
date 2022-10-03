@@ -16,6 +16,8 @@ knitr::opts_chunk$set(
 
 ```{r setup}
 library(seattlepetname)
+library(ggplot2)
+library(dplyr)
 ```
 
 ### Purpose of the package:
@@ -125,7 +127,6 @@ pet_summary("2018")
 
 ```
 
-
 6.  The top 10 popular pet name (by species) in Seattle
 
 By entering the species in `top_name()` function, a plot that shows the top 10 popular name of a particular species will be returned .
@@ -137,4 +138,28 @@ The data frame allow users to understand the preference of pet names (by species
 
 ```{r}
 top_name("Dog") 
+```
+
+
+7. utilize the function with `ggplot2` and `dplyr`:
+
+Using the `pet_summary()` as example, functions in this package facilitates the data analysis process. Users can compare the data from different year utilizing different packages to create meaningful plots. 
+
+```{r}
+
+summary_2016 <- pet_summary("2016") 
+
+summary_2017 <- pet_summary("2017") 
+
+summary_2018 <- pet_summary("2018")
+
+summary <- full_join(summary_2016, summary_2017) 
+
+summary <- full_join(summary, summary_2018) %>%
+  select(year, zipcode_count) 
+ 
+ggplot(summary, aes(x = as.factor(year), y = zipcode_count)) +
+  geom_col()
+
+
 ```
