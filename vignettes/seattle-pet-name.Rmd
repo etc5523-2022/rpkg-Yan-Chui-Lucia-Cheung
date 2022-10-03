@@ -158,9 +158,8 @@ summary <- full_join(summary_2016, summary_2017)
 summary <- full_join(summary, summary_2018) %>%
   select(year, zipcode_count) 
  
-ggplot(summary, aes(x = as.factor(year), y = zipcode_count)) +
+ggplot(summary, aes(x = year, y = zipcode_count)) +
   geom_col()
 
 
 ```
-testing 
