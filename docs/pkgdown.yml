@@ -1,0 +1,7 @@
+pandoc: '2.18'
+pkgdown: 2.0.6
+pkgdown_sha: ~
+articles:
+  seattle-pet-name: seattle-pet-name.html
+last_built: 2022-10-03T08:05Z
+
