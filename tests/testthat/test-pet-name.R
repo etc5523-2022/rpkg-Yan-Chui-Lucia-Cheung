@@ -19,9 +19,16 @@ test_that("testing pet_summary function", {
   expect_s3_class(pet_summary(pet_count), "data.frame")
 })
 
-test_that("testing zipcode_min function", {
+test_that("testing name_of_the_year function", {
   pet_name <- c("Gingersnap")
   top_year <- c("2018")
   expect_type(name_of_the_year(pet_name, top_year), "character")
 })
+
+test_that("testing name_of_the_year function", {
+  pet_name <- c("Lucy")
+  top_year <- c("2018")
+  expect_type(name_of_the_year(pet_name, top_year), "list")
+})
+
 
