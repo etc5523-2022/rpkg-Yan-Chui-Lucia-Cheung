@@ -482,7 +482,7 @@
 </section>
 <section id="demonstration-of-the-function-1" class="slide level2 scrollable">
 <h2>Demonstration of the function:</h2>
-<div style="color: #FCAF0B;">
+<div style="color: #EBA000;">
 <p>Function 1: The preference of primary breeds of pet owners in Seattle</p>
 </div>
 <div style="font-size: 30px;">
@@ -616,7 +616,7 @@
 </ul>
 <div class="sourceCode" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="fu">pet_summary</span>(<span class="st">"2018"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li>Output: A character string will be returned to indicate that the name is not on the top 5 list</li>
+<li>Output: a dataframe will be returned</li>
 </ul>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
@@ -646,13 +646,63 @@
 </ul>
 <div class="cell">
 <div class="cell-output-display">
-<div id="htmlwidget-158e199db19e1aaf9373" style="width:960px;height:480px;" class="plotly html-widget"></div>
-<script type="application/json" data-for="htmlwidget-158e199db19e1aaf9373">{"x":{"data":[{"orientation":"v","width":[0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.899999999999999,0.899999999999999,0.899999999999999],"base":[0,0,0,0,0,0,0,0,0,0],"x":[1,2,3,4,5,6,7,8,9,10],"y":[335,306,245,244,219,187,186,185,183,182],"text":["name:  Lucy count:  335","name:  Charlie count:  306","name:  Bella count:  245","name:  Luna count:  244","name:  Daisy count:  219","name:  Cooper count:  187","name:  Lola count:  186","name:  Max count:  185","name:  Molly count:  183","name:  Stella count:  182"],"type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(173,216,230,1)","line":{"width":1.88976377952756,"color":"transparent"}},"showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":30.6118721461187,"r":7.30593607305936,"b":44.5662100456621,"l":43.1050228310502},"plot_bgcolor":"rgba(235,235,235,1)","paper_bgcolor":"rgba(255,255,255,1)","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[0.4,10.6],"tickmode":"array","ticktext":["Lucy","Charlie","Bella","Luna","Daisy","Cooper","Lola","Max","Molly","Stella"],"tickvals":[1,2,3,4,5,6,7,8,9,10],"categoryorder":"array","categoryarray":["Lucy","Charlie","Bella","Luna","Daisy","Cooper","Lola","Max","Molly","Stella"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y","title":{"text":"pet names","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-16.75,351.75],"tickmode":"array","ticktext":["0","100","200","300"],"tickvals":[0,100,200,300],"categoryorder":"array","categoryarray":["0","100","200","300"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","title":{"text":"number of pet","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":false,"legend":{"bgcolor":"rgba(255,255,255,1)","bordercolor":"transparent","borderwidth":1.88976377952756,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"source":"A","attrs":{"929526130c6d":{"x":{},"y":{},"text":{},"type":"bar"}},"cur_data":"929526130c6d","visdat":{"929526130c6d":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-a5e7102ad109b8367a0b" style="width:960px;height:480px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-a5e7102ad109b8367a0b">{"x":{"data":[{"orientation":"v","width":[0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.899999999999999,0.899999999999999,0.899999999999999],"base":[0,0,0,0,0,0,0,0,0,0],"x":[1,2,3,4,5,6,7,8,9,10],"y":[335,306,245,244,219,187,186,185,183,182],"text":["name:  Lucy count:  335","name:  Charlie count:  306","name:  Bella count:  245","name:  Luna count:  244","name:  Daisy count:  219","name:  Cooper count:  187","name:  Lola count:  186","name:  Max count:  185","name:  Molly count:  183","name:  Stella count:  182"],"type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(173,216,230,1)","line":{"width":1.88976377952756,"color":"transparent"}},"showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":30.6118721461187,"r":7.30593607305936,"b":44.5662100456621,"l":43.1050228310502},"plot_bgcolor":"rgba(235,235,235,1)","paper_bgcolor":"rgba(255,255,255,1)","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[0.4,10.6],"tickmode":"array","ticktext":["Lucy","Charlie","Bella","Luna","Daisy","Cooper","Lola","Max","Molly","Stella"],"tickvals":[1,2,3,4,5,6,7,8,9,10],"categoryorder":"array","categoryarray":["Lucy","Charlie","Bella","Luna","Daisy","Cooper","Lola","Max","Molly","Stella"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y","title":{"text":"pet names","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-16.75,351.75],"tickmode":"array","ticktext":["0","100","200","300"],"tickvals":[0,100,200,300],"categoryorder":"array","categoryarray":["0","100","200","300"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","title":{"text":"number of pet","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":false,"legend":{"bgcolor":"rgba(255,255,255,1)","bordercolor":"transparent","borderwidth":1.88976377952756,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"source":"A","attrs":{"bb3119a818":{"x":{},"y":{},"text":{},"type":"bar"}},"cur_data":"bb3119a818","visdat":{"bb3119a818":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <ul>
 <li>It allow users to understand the preference of pet names of pet owners (by species) in Seattle</li>
 </ul>
+</div>
+</section>
+<section id="demonstration-of-the-function-7" class="slide level2 scrollable">
+<h2>Demonstration of the function:</h2>
+<div style="color: #EBA000;">
+<p>Utilize the function with <code>ggplot2</code> and <code>dplyr</code>:</p>
+</div>
+<div style="font-size: 30px;">
+<ul>
+<li><p>facilitates the data analysis process</p></li>
+<li><p>Users can compare the data from different year utilizing different packages to create meaningful plots</p></li>
+</ul>
+<div class="sourceCode" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a></span>
+<span id="cb16-2"><a href="#cb16-2"></a>summary_2016 <span class="ot">&lt;-</span> <span class="fu">pet_summary</span>(<span class="st">"2016"</span>) </span>
+<span id="cb16-3"><a href="#cb16-3"></a></span>
+<span id="cb16-4"><a href="#cb16-4"></a>summary_2017 <span class="ot">&lt;-</span> <span class="fu">pet_summary</span>(<span class="st">"2017"</span>) </span>
+<span id="cb16-5"><a href="#cb16-5"></a></span>
+<span id="cb16-6"><a href="#cb16-6"></a>summary_2018 <span class="ot">&lt;-</span> <span class="fu">pet_summary</span>(<span class="st">"2018"</span>)</span>
+<span id="cb16-7"><a href="#cb16-7"></a></span>
+<span id="cb16-8"><a href="#cb16-8"></a>summary <span class="ot">&lt;-</span> <span class="fu">full_join</span>(summary_2016, summary_2017) </span>
+<span id="cb16-9"><a href="#cb16-9"></a></span>
+<span id="cb16-10"><a href="#cb16-10"></a>summary <span class="ot">&lt;-</span> <span class="fu">full_join</span>(summary, summary_2018) <span class="sc">%&gt;%</span></span>
+<span id="cb16-11"><a href="#cb16-11"></a>  <span class="fu">select</span>(year, zipcode_count) </span>
+<span id="cb16-12"><a href="#cb16-12"></a> </span>
+<span id="cb16-13"><a href="#cb16-13"></a><span class="fu">ggplot</span>(summary, <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> zipcode_count)) <span class="sc">+</span></span>
+<span id="cb16-14"><a href="#cb16-14"></a>  <span class="fu">geom_col</span>()</span>
+<span id="cb16-15"><a href="#cb16-15"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 5
+   year  mean median    sd zipcode_count
+  &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;         &lt;int&gt;
+1  2016  47.6     49  39.2            33</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 5
+   year  mean median    sd zipcode_count
+  &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;         &lt;int&gt;
+1  2017  265.      4  399.            64</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 5
+   year  mean median    sd zipcode_count
+  &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;         &lt;int&gt;
+1  2018  361.    2.5  679.            92</code></pre>
+</div>
+<div class="cell-output-display">
+<p><img data-src="pkg_presentation_files/figure-revealjs/unnamed-chunk-10-1.png" width="960"></p>
+</div>
+</div>
 </div>
 </section>
 <section id="thanks-for-listening-to-the-presentation" class="slide level2">

@@ -61,6 +61,8 @@ devtools::install_github("etc5523-2022/rpkg-Yan-Chui-Lucia-Cheung")
 ```{r}
 
 library(seattlepetname)
+library(dplyr)
+library(ggplot2)
 
 ```
 
@@ -146,7 +148,6 @@ zipcode_min("2018")
 Function 4: The top 5 pet name of a particular year
 :::
 
-
 ::: {style="font-size: 30px;"}
 -   Input: Pet names and year recorded in the data set (from 2015 to 2018)
 
@@ -190,7 +191,7 @@ Function 5: The number summary of pet distribution in each year
 pet_summary("2018")
 ```
 
--   Output: A character string will be returned to indicate that the name is not on the top 5 list
+-   Output: a dataframe will be returned
 
 ```{r}
 
@@ -224,6 +225,60 @@ top_name("Dog")
 
 -   It allow users to understand the preference of pet names of pet owners (by species) in Seattle
 :::
+
+## Demonstration of the function: {.scrollable}
+
+::: {style="color: #EBA000;"}
+ Utilize the function with `ggplot2` and `dplyr`:
+:::
+
+::: {style="font-size: 30px;"}
+
+- facilitates the data analysis process
+
+- Users can compare the data from different year utilizing different packages to create meaningful plots 
+
+```{.r}
+
+summary_2016 <- pet_summary("2016") 
+
+summary_2017 <- pet_summary("2017") 
+
+summary_2018 <- pet_summary("2018")
+
+summary <- full_join(summary_2016, summary_2017) 
+
+summary <- full_join(summary, summary_2018) %>%
+  select(year, zipcode_count) 
+ 
+ggplot(summary, aes(x = year, y = zipcode_count)) +
+  geom_col()
+
+
+```
+
+```{r}
+
+summary_2016 <- pet_summary("2016") 
+
+summary_2017 <- pet_summary("2017") 
+
+summary_2018 <- pet_summary("2018")
+
+summary <- full_join(summary_2016, summary_2017) 
+
+summary <- full_join(summary, summary_2018) %>%
+  select(year, zipcode_count) 
+ 
+ggplot(summary, aes(x = year, y = zipcode_count)) +
+  geom_col()
+
+
+```
+
+
+:::
+
 
 ## Thanks for listening to the presentation!
 
