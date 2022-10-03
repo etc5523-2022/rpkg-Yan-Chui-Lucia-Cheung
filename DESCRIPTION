@@ -29,3 +29,4 @@ Suggests:
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
 VignetteBuilder: knitr
+url: https://etc5523-2022.github.io/rpkg-Yan-Chui-Lucia-Cheung/

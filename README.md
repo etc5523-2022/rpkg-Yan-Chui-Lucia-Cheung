@@ -11,6 +11,9 @@ preference of primary breeds and pet names of pet owners in Seattle. The
 package also allows users to retrieve the distribution of licensed pet
 in Seattle according to zip code districts.
 
+The more detailed information about the package can be found in this
+[website](https://etc5523-2022.github.io/rpkg-Yan-Chui-Lucia-Cheung/)
+
 ## Installation
 
 Users can install the `seattlepetname` from
